@@ -1,7 +1,8 @@
 import criterios
+import getpass
 
 if __name__ == "__main__":
-    password_input = input("Escreva a sua Password: ")
+    password_input = getpass.getpass("Escreva a sua Password: ")
     
     password = criterios.Criterios(password_input)
     
