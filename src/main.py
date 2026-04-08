@@ -1,8 +1,8 @@
 import criterios
-import getpass
+import Ler_Password
 
 if __name__ == "__main__":
-    password_input = getpass.getpass("Escreva a sua Password: ")
+    password_input = Ler_Password.ler_password("Escreva a sua Password: ")
     
     password = criterios.Criterios(password_input)
     
@@ -10,24 +10,24 @@ if __name__ == "__main__":
         password.tamanho(),
         password.letra_maiuscula(),
         password.letra_minuscula(),
-        password.tem_Numero(),
-        password.tem_Simbolo(),
+        password.tem_numero(),
+        password.tem_simbolo(),
         password.password_previsivel()[0] == False
     ]
-    count_Criterios = 0
+    count_criterios = 0
 
     for criterio in criterios_validos:
         if criterio:
-            count_Criterios += 1
+            count_criterios += 1
     
-    if count_Criterios == 5:
+    if count_criterios == 6:
         print("A sua Password é Forte")
-    elif count_Criterios >= 3:
+    elif count_criterios >= 3:
         print("A sua Password é Média")
     else:
         print("A sua Password é Fraca")
         
-    print(f"Você cumpriu {count_Criterios}/5 critérios.")
+    print(f"Você cumpriu {count_criterios}/6 critérios.")
         
     melhorias = []
 

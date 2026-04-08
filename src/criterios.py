@@ -37,10 +37,10 @@ class Criterios:
     def letra_minuscula(self):
         return any(char.islower() for char in self.password)
     
-    def tem_Numero(self):
+    def tem_numero(self):
         return any(char.isdigit() for char in self.password)
     
-    def tem_Simbolo(self):
+    def tem_simbolo(self):
         simbolos = string.punctuation
         return any(char in simbolos for char in self.password)
     
